@@ -148,17 +148,15 @@ function buildRope(knots) {
             thisKnot.j = Math.floor(grid[0].length / 2)
             headKnot = thisKnot
             currentKnot = headKnot
-        } else if (knot < knots - 1) {
-            thisKnot.section = knot
-            thisKnot.i = headKnot.i
-            thisKnot.j = headKnot.j
-            currentKnot.nextKnot = thisKnot
-            currentKnot = thisKnot
         } else {
             thisKnot.section = knot
             thisKnot.i = headKnot.i
             thisKnot.j = headKnot.j
             currentKnot.nextKnot = thisKnot
+            currentKnot = thisKnot
+        }
+
+        if (knot === knots - 1) {
             grid[currentKnot.i][currentKnot.j] = true
         }
     }
