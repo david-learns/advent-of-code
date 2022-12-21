@@ -39,9 +39,9 @@ function getMarker(characterStream, OFFSET) {
 
     for (let i = 0; i < characterStream.length - OFFSET; i++) {
 
-        const fourChars = characterStream.slice(i, i + OFFSET + 1)
-        const areUnique = uniqueChars(fourChars)
-        // console.log(`fourChars: ${fourChars}, areUnique: ${areUnique}, i: ${i}, len: ${i + OFFSET + 1}`)
+        const chars = characterStream.slice(i, i + OFFSET + 1)
+        const areUnique = uniqueChars(chars)
+        // console.log(`chars: ${chars}, areUnique: ${areUnique}, i: ${i}, len: ${i + OFFSET + 1}`)
         if (areUnique) {
             index = i + OFFSET + 1
             break
